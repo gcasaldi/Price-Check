@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Price Check - Stai pagando troppo?",
+  "description": "Confronta prezzi, mostra storico e avvisa quando conviene comprare.",
+  "version": "0.1.0",
+  "permissions": ["storage", "alarms", "notifications", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Price Check",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Price Check</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>Price Check</h1>
+        <p id="siteLabel">Analisi pagina corrente</p>
+      </header>
+
+      <section class="card">
+        <h2 id="title">Prodotto</h2>
+        <p class="price" id="currentPrice">-</p>
+        <p id="verdict" class="verdict neutral">Caricamento...</p>
+      </section>
+
+      <section class="card">
+        <h3>Storico prezzi</h3>
+        <canvas id="historyChart" width="320" height="120"></canvas>
+        <div class="stats" id="stats"></div>
+      </section>
+
+      <section class="card">
+        <h3>Wishlist intelligente</h3>
+        <button id="wishlistToggle" class="btn">Aggiungi in wishlist</button>
+        <div class="targetRow">
+          <input id="targetPrice" type="number" step="0.01" min="0" placeholder="Prezzo target" />
+          <button id="saveTarget" class="btn secondary">Salva target</button>
+        </div>
+        <p id="wishlistStatus" class="small"></p>
+      </section>
+
+      <section class="card">
+        <h3>Alert recenti</h3>
+        <ul id="alerts"></ul>
+      </section>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+  </html>
