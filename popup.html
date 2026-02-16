@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Price Reality Check</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>💰 Price Reality Check</h1>
+    </header>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="current">Current Product</button>
+      <button class="tab-btn" data-tab="wishlist">Wishlist</button>
+      <button class="tab-btn" data-tab="settings">Settings</button>
+    </div>
+
+    <!-- Current Product Tab -->
+    <div id="current-tab" class="tab-content active">
+      <div id="no-product" class="message">
+        <p>📦 No product detected on this page.</p>
+        <p class="small">Visit Amazon, Booking, or eBay product pages to track prices.</p>
+      </div>
+
+      <div id="product-info" class="product-info" style="display: none;">
+        <div class="product-header">
+          <img id="product-image" src="" alt="Product">
+          <div class="product-details">
+            <h3 id="product-title"></h3>
+            <div class="product-meta">
+              <span id="product-site" class="badge"></span>
+              <span id="product-price" class="price"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="price-analysis">
+          <h4>Price Analysis</h4>
+          <div id="price-stats">
+            <div class="stat">
+              <span class="stat-label">Current Price</span>
+              <span class="stat-value" id="current-price">-</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Average Price</span>
+              <span class="stat-value" id="average-price">-</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Lowest Price</span>
+              <span class="stat-value" id="lowest-price">-</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Highest Price</span>
+              <span class="stat-value" id="highest-price">-</span>
+            </div>
+          </div>
+          <div id="price-verdict" class="verdict"></div>
+        </div>
+
+        <div class="price-chart">
+          <h4>Price History</h4>
+          <canvas id="chart" width="400" height="200"></canvas>
+          <p class="small" id="chart-info">Track count: <span id="track-count">0</span></p>
+        </div>
+
+        <div class="actions">
+          <button id="add-to-wishlist" class="btn btn-primary">➕ Add to Wishlist</button>
+          <button id="remove-from-wishlist" class="btn btn-secondary" style="display: none;">➖ Remove from Wishlist</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wishlist Tab -->
+    <div id="wishlist-tab" class="tab-content">
+      <div id="wishlist-empty" class="message">
+        <p>📋 Your wishlist is empty.</p>
+        <p class="small">Add products to track their prices and get alerts.</p>
+      </div>
+      <div id="wishlist-items"></div>
+    </div>
+
+    <!-- Settings Tab -->
+    <div id="settings-tab" class="tab-content">
+      <div class="setting">
+        <label>
+          <input type="checkbox" id="alerts-enabled" checked>
+          Enable price alerts
+        </label>
+      </div>
+      <div class="setting">
+        <label>
+          Price threshold for "too high" warning:
+          <input type="number" id="price-threshold" value="10" min="0" max="100" step="5">%
+        </label>
+      </div>
+      <div class="setting">
+        <button id="clear-data" class="btn btn-secondary">Clear All Data</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
