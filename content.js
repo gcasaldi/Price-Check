@@ -124,10 +124,10 @@ class PriceDetector {
 
   detectCurrency() {
     const hostname = window.location.hostname;
-    if (hostname.includes('.it')) return 'EUR';
-    if (hostname.includes('.co.uk')) return 'GBP';
-    if (hostname.includes('.de')) return 'EUR';
-    if (hostname.includes('.com')) return 'USD';
+    if (hostname.endsWith('.it') || hostname === 'amazon.it' || hostname === 'ebay.it') return 'EUR';
+    if (hostname.endsWith('.co.uk') || hostname === 'amazon.co.uk') return 'GBP';
+    if (hostname.endsWith('.de') || hostname === 'amazon.de') return 'EUR';
+    if (hostname.endsWith('.com') || hostname === 'amazon.com' || hostname === 'ebay.com' || hostname === 'booking.com') return 'USD';
     return 'EUR';
   }
 
