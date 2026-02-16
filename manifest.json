@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "Price Reality Check",
+  "version": "1.0.0",
+  "description": "Compare prices, view price history, and get alerts when shopping online",
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://*.amazon.com/*",
+    "https://*.amazon.it/*",
+    "https://*.amazon.co.uk/*",
+    "https://*.amazon.de/*",
+    "https://*.booking.com/*",
+    "https://*.ebay.com/*",
+    "https://*.ebay.it/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.amazon.com/*",
+        "https://*.amazon.it/*",
+        "https://*.amazon.co.uk/*",
+        "https://*.amazon.de/*",
+        "https://*.booking.com/*",
+        "https://*.ebay.com/*",
+        "https://*.ebay.it/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

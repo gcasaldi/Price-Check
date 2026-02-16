@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Product - Amazon Style Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f8f9fa;
+    }
+    .product-container {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    #productTitle {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.4;
+      margin-bottom: 20px;
+      color: #0F1111;
+    }
+    .product-image {
+      max-width: 400px;
+      margin-bottom: 30px;
+    }
+    #landingImage {
+      width: 100%;
+      border: 1px solid #ddd;
+    }
+    .price-container {
+      margin: 20px 0;
+    }
+    .a-price {
+      display: flex;
+      align-items: baseline;
+    }
+    .a-price-whole {
+      font-size: 28px;
+      font-weight: 400;
+      color: #B12704;
+    }
+    .a-price-fraction {
+      font-size: 13px;
+      color: #B12704;
+    }
+    .product-info {
+      margin-top: 30px;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+    .note {
+      margin-top: 30px;
+      padding: 15px;
+      background: #e7f5ff;
+      border-left: 4px solid #228be6;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="product-container">
+    <h1 id="productTitle">
+      Wireless Noise Cancelling Headphones, Premium Sound Quality, 30-Hour Battery Life
+    </h1>
+
+    <div class="product-image">
+      <img id="landingImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='%23999'%3EProduct Image%3C/text%3E%3C/svg%3E" alt="Product">
+    </div>
+
+    <div class="price-container">
+      <span class="a-price">
+        <span class="a-price-whole">89</span>
+        <span class="a-price-fraction">99</span>
+      </span>
+    </div>
+
+    <div class="product-info">
+      <h3>Product Details</h3>
+      <ul>
+        <li>Advanced Active Noise Cancellation (ANC)</li>
+        <li>30 hours of battery life</li>
+        <li>Premium audio drivers for superior sound</li>
+        <li>Comfortable over-ear design</li>
+        <li>Bluetooth 5.0 connectivity</li>
+        <li>Built-in microphone for calls</li>
+      </ul>
+    </div>
+
+    <div class="note">
+      <strong>Note for Testing:</strong> This is a demo page that simulates an Amazon product page structure. 
+      When the Price Reality Check extension is installed, it will:
+      <ul style="margin-top: 10px;">
+        <li>Detect the product title from <code>#productTitle</code></li>
+        <li>Extract the price from <code>.a-price-whole</code> and <code>.a-price-fraction</code></li>
+        <li>Use the image from <code>#landingImage</code></li>
+        <li>Show an alert banner at the top of the page</li>
+        <li>Track this price in the extension's storage</li>
+      </ul>
+      <p style="margin-top: 10px;">
+        <strong>To test:</strong> Click the extension icon in your browser toolbar to see the price analysis popup.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Simulate different prices on page reload for testing
+    const prices = [
+      { whole: '89', fraction: '99' },
+      { whole: '79', fraction: '99' },
+      { whole: '94', fraction: '99' },
+      { whole: '84', fraction: '99' },
+      { whole: '99', fraction: '99' }
+    ];
+    
+    // Use a random price to simulate price changes
+    const randomPrice = prices[Math.floor(Math.random() * prices.length)];
+    document.querySelector('.a-price-whole').textContent = randomPrice.whole;
+    document.querySelector('.a-price-fraction').textContent = randomPrice.fraction;
+  </script>
+</body>
+</html>

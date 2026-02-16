@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Price Reality Check - Demo Page</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background: #f8f9fa;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .header h1 {
+      color: #667eea;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    .demo-product {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    .demo-product h2 {
+      margin-top: 0;
+      color: #333;
+    }
+    .price {
+      font-size: 24px;
+      font-weight: 700;
+      color: #667eea;
+      margin: 15px 0;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .feature {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    .feature h3 {
+      color: #667eea;
+      margin-top: 0;
+      font-size: 18px;
+    }
+    .feature ul {
+      margin: 15px 0;
+      padding-left: 20px;
+    }
+    .feature li {
+      margin: 8px 0;
+      color: #555;
+    }
+    .install-instructions {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 30px;
+      border-radius: 12px;
+      margin-top: 40px;
+    }
+    .install-instructions h2 {
+      margin-top: 0;
+    }
+    .install-instructions ol {
+      margin: 20px 0;
+      padding-left: 20px;
+    }
+    .install-instructions li {
+      margin: 10px 0;
+      line-height: 1.6;
+    }
+    .code {
+      background: rgba(0, 0, 0, 0.2);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>💰 Price Reality Check</h1>
+    <p>Smart price tracking browser extension for better shopping decisions</p>
+  </div>
+
+  <div class="demo-product">
+    <h2>How It Works</h2>
+    <p>Price Reality Check is a browser extension that helps you save money by tracking prices across e-commerce sites and alerting you when you might be paying too much.</p>
+    <div class="price">All data stored locally - 100% private!</div>
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      <h3>📊 Price History Tracking</h3>
+      <ul>
+        <li>Automatic price detection on product pages</li>
+        <li>Visual charts showing price trends</li>
+        <li>Track up to 100 price points per product</li>
+        <li>Compare current price with historical averages</li>
+      </ul>
+    </div>
+
+    <div class="feature">
+      <h3>⚠️ Smart Price Alerts</h3>
+      <ul>
+        <li>"Are you paying too much?" analysis</li>
+        <li>Banner alerts on product pages</li>
+        <li>Customizable price threshold warnings</li>
+        <li>Good deal notifications</li>
+      </ul>
+    </div>
+
+    <div class="feature">
+      <h3>🛒 Intelligent Wishlist</h3>
+      <ul>
+        <li>Track your favorite products</li>
+        <li>Set target prices</li>
+        <li>Automatic price drop notifications</li>
+        <li>Easy wishlist management</li>
+      </ul>
+    </div>
+
+    <div class="feature">
+      <h3>🌍 Multi-Site Support</h3>
+      <ul>
+        <li>Amazon (all regions)</li>
+        <li>Booking.com</li>
+        <li>eBay (international)</li>
+        <li>Generic e-commerce sites</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="install-instructions">
+    <h2>Installation Instructions</h2>
+    <p>Follow these steps to install the extension in your browser:</p>
+    
+    <h3>For Chrome/Edge/Brave:</h3>
+    <ol>
+      <li>Clone or download this repository to your computer</li>
+      <li>Open your browser and go to <span class="code">chrome://extensions/</span></li>
+      <li>Enable "Developer mode" in the top-right corner</li>
+      <li>Click "Load unpacked"</li>
+      <li>Select the <span class="code">Price-Check</span> folder</li>
+      <li>Done! The extension is now active</li>
+    </ol>
+
+    <h3>For Firefox:</h3>
+    <ol>
+      <li>Clone or download this repository to your computer</li>
+      <li>Open Firefox and go to <span class="code">about:debugging#/runtime/this-firefox</span></li>
+      <li>Click "Load Temporary Add-on"</li>
+      <li>Navigate to the <span class="code">Price-Check</span> folder and select <span class="code">manifest.json</span></li>
+      <li>Done! The extension is now active</li>
+    </ol>
+
+    <h3>Using the Extension:</h3>
+    <ol>
+      <li>Visit any product page on Amazon, Booking, or eBay</li>
+      <li>The extension automatically detects and tracks the price</li>
+      <li>Click the extension icon to see price history and analysis</li>
+      <li>Add products to your wishlist for price drop alerts</li>
+      <li>Configure settings in the extension popup</li>
+    </ol>
+  </div>
+
+  <div class="demo-product" style="margin-top: 40px;">
+    <h2>Privacy & Data</h2>
+    <p><strong>All data is stored locally in your browser.</strong> The extension does not send any information to external servers. Your shopping history, tracked prices, and wishlist remain completely private on your device.</p>
+    <p>You can clear all data at any time from the Settings tab in the extension popup.</p>
+  </div>
+
+  <div class="demo-product">
+    <h2>Repository Structure</h2>
+    <pre style="background: #f8f9fa; padding: 15px; border-radius: 8px; overflow-x: auto;">
+Price-Check/
+├── manifest.json       # Extension configuration
+├── content.js         # Price detection and extraction
+├── content.css        # Alert banner styles
+├── background.js      # Price tracking logic
+├── popup.html         # Extension popup UI
+├── popup.js          # Popup interaction logic
+├── popup.css         # Popup styles
+├── icons/            # Extension icons (16px, 32px, 48px, 128px)
+└── README.md         # Documentation
+    </pre>
+  </div>
+</body>
+</html>
